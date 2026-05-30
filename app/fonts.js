@@ -1,0 +1,9 @@
+// app/fonts.js
+import { Amiri } from 'next/font/google';
+
+export const amiri = Amiri({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-amiri',
+});
