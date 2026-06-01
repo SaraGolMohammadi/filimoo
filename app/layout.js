@@ -1,4 +1,4 @@
-// app/layout.js
+
 import './globals.css'
 import { amiri } from './fonts'
 import Header from './components/Header'

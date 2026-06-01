@@ -9,13 +9,13 @@ export default function Category() {
   const { category } = useParams();
   const searchParams = useSearchParams();
 
-  const lang = searchParams.get('lang');
+  
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/db.json')
+    fetch('/data/filiter.json')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

@@ -9,9 +9,6 @@ export default function Home() {
     <main className=" bg-gray-900">
       <ProductSlider />
         <Cart />
-     {/* <Footer/> */}
-
-       
     </main>
   );
 }

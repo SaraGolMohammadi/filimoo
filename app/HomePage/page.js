@@ -1,7 +1,7 @@
 import MovieSlider from "../components/MovieSlider";
 import Footer from "../components/Footer";
 
-/* ================= COMEDY ================= */
+
 const comedyMovies = [
   { id: 1, image: "/img/14826505-7ce4-4bc0-8da2-3c5bc00461e9.webp", title: "آموزش رانندگی", year: "2026", rating: "5.5" },
   { id: 2, image: "/img/b58a8764-15e7-4a8e-bb78-51a0affdbc8e.webp", title: "مرد در برابر با بچه", year: "2025", rating: "6.5" },
@@ -15,7 +15,7 @@ const comedyMovies = [
   { id: 10, image: "/img/23c3f47e-a1b4-46db-ad16-e52b490c6035.webp", title: "گارفیلد", year: "2008", rating: "5.5" },
 ];
 
-/* ================= ACTION ================= */
+
 const actionMovies = [
   { id: 1, image: "/img/7015fdb6-29db-4556-910b-001f0395c4eb.webp", title: "رجا شیوا جی", year: "2026", rating: "7.0" },
   { id: 2, image: "/img/28e1b04e-7b6f-46b8-acf5-356a5b20b809.webp", title: "نرمال", year: "2023", rating: "6.8" },
@@ -28,7 +28,7 @@ const actionMovies = [
   { id: 9, image: "/img/eaa0a244-b81a-4406-a713-d91abdd18f72.webp", title: "نبرد وینتر", year: "2025", rating: "7.2" },
 ];
 
-/* ================= DRAMA ================= */
+
 const dramaMovies = [
   { id: 1, image: "/img/89bc2130-501d-41a9-993e-b53c696aae0a.webp", title: "تاکسی", year: "2021", rating: "8.0" },
   { id: 2, image: "/img/452fbe0b-ce8d-4531-b2de-ac3fc8b04ba6.webp", title: "دکتر یوهان", year: "2020", rating: "7.5" },
@@ -42,7 +42,7 @@ const dramaMovies = [
   { id: 10, image: "/img/5c19137e-7272-4ed9-970b-a889986ff646.webp", title: "پیرمرد", year: "2020", rating: "7.5" },
 ];
 
-/* ================= HORROR ================= */
+
 const horrorMovies = [
   { id: 1, image: "/img/64efd78e-a3bc-4944-9229-c4c3e245abcb.webp", title: "جیغ 6", year: "2023", rating: "6.0" },
   { id: 2, image: "/img/d9e2f6aa-0ffc-44fa-b7ee-392d4956a678.webp", title: "طنین پنهان", year: "2022", rating: "5.8" },
@@ -52,7 +52,7 @@ const horrorMovies = [
   { id: 6, image: "/img/a172bbfb-c7aa-433f-810c-54359772dace.webp", title: "وارد نشوید", year: "2022", rating: "5.8" },
 ];
 
-/* ================= ROMANCE ================= */
+
 const romanceMovies = [
   { id: 1, image: "/img/630c29c0-6600-42aa-9600-2f4dcf7882be.webp", title: "تو مال منی", year: "2024", rating: "7.1" },
   { id: 2, image: "/img/05325b86-962d-4262-b229-6decb3538d08.webp", title: "سرعت و عشق", year: "2023", rating: "6.9" },
@@ -62,7 +62,7 @@ const romanceMovies = [
   { id: 6, image: "/img/7f3879c0-6865-4cc3-8c42-63e9da146ab8.webp", title: "بدون سود بدون عشق", year: "2023", rating: "6.9" },
 ];
 
-/* ================= SECTIONS ================= */
+
 const sections = [
   { id: 1, title: "کمدی پلاس", movies: comedyMovies, type: "comedy" },
   { id: 2, title: "اکشن پلاس", movies: actionMovies, type: "action" },

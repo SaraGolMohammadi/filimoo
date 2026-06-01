@@ -8,8 +8,7 @@ import Header from '../components/Header';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import Cart from '../movies/page';
-// import Filter from '../filter/page';
+
 
 export default function ProductSlider() {
   const [products, setProducts] = useState([]);
