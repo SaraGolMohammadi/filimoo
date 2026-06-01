@@ -1,265 +1,183 @@
-"use client";
+'use client';
 
-import React, { useMemo, useState, useEffect } from "react";
-import HomePage from "../HomePage/page";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import HomePage from '../HomePage/page';
 
 export default function Filter() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  
+  const [openMenu, setOpenMenu] = useState(null);
 
-  const [tempType, setTempType] = useState("");
-  const [tempGenre, setTempGenre] = useState("");
-  const [tempCountry, setTempCountry] = useState("");
-  const [tempLanguage, setTempLanguage] = useState("");
-  const [tempAge, setTempAge] = useState("");
-  const [tempSort, setTempSort] = useState("latest");
-
-  const [selectedType, setSelectedType] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [selectedAge, setSelectedAge] = useState("");
-  const [appliedSort, setAppliedSort] = useState("latest");
-
-  useEffect(() => {
-    fetch("/data/db.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const moviesData = data.movies || data;
-        setProducts(moviesData);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("خطا در دریافت دیتا:", error);
-        setLoading(false);
-      });
-  }, []);
-
-
-  const uniqueGenres = useMemo(() => {
-    const genres = products.map(p => p.genre).filter(Boolean);
-    return [...new Set(genres)];
-  }, [products]);
-
-  const uniqueCountries = useMemo(() => {
-    const countries = products.map(p => p.country).filter(Boolean);
-    return [...new Set(countries)];
-  }, [products]);
-
-  const uniqueLanguages = useMemo(() => {
-    const languages = products.map(p => p.filmLanguage).filter(Boolean);
-    return [...new Set(languages)];
-  }, [products]);
-
-  const uniqueAges = useMemo(() => {
-    const ages = products.map(p => p.ageRating).filter(Boolean);
-    return [...new Set(ages)];
-  }, [products]);
-
-  const uniqueTypes = useMemo(() => {
-    const types = products.map(p => p.movieType).filter(Boolean);
-    return [...new Set(types)];
-  }, [products]);
-
- 
-  const filteredAndSortedProducts = useMemo(() => {
-    let arr = [...products];
-
-  
-    if (selectedGenre) {
-      arr = arr.filter(item => item.genre === selectedGenre);
-    }
-    if (selectedCountry) {
-      arr = arr.filter(item => item.country === selectedCountry);
-    }
-    if (selectedLanguage) {
-      arr = arr.filter(item => item.filmLanguage === selectedLanguage);
-    }
-    if (selectedAge) {
-      arr = arr.filter(item => item.ageRating === selectedAge);
-    }
-    if (selectedType) {
-      arr = arr.filter(item => item.movieType === selectedType);
-    }
-
-    
-    if (appliedSort === "latest") {
-      arr.sort((a, b) => (b.productionYear ?? 0) - (a.productionYear ?? 0));
-    } else if (appliedSort === "oldest") {
-      arr.sort((a, b) => (a.productionYear ?? 0) - (b.productionYear ?? 0));
-    } else if (appliedSort === "name_asc") {
-      arr.sort((a, b) => (a.title || "").localeCompare(b.title || "", "fa"));
-    } else if (appliedSort === "name_desc") {
-      arr.sort((a, b) => (b.title || "").localeCompare(a.title || "", "fa"));
-    }
-    
-    return arr;
-  }, [products, appliedSort, selectedGenre, selectedCountry, selectedLanguage, selectedAge, selectedType]);
-
-  const applyFilters = () => {
-    setSelectedType(tempType);
-    setSelectedGenre(tempGenre);
-    setSelectedCountry(tempCountry);
-    setSelectedLanguage(tempLanguage);
-    setSelectedAge(tempAge);
-    setAppliedSort(tempSort);
-   
-    setTimeout(() => {
-      const resultsDiv = document.getElementById('results');
-      if (resultsDiv) {
-        resultsDiv.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start'
-        });
-      }
-    }, 150);
-  };
-
-  const clearAllFilters = () => {
-    setTempType("");
-    setTempGenre("");
-    setTempCountry("");
-    setTempLanguage("");
-    setTempAge("");
-    setTempSort("latest");
-    setSelectedType("");
-    setSelectedGenre("");
-    setSelectedCountry("");
-    setSelectedLanguage("");
-    setSelectedAge("");
-    setAppliedSort("latest");
-  };
-
-  const hasActiveFilters = selectedType || selectedGenre || selectedCountry || selectedLanguage || selectedAge;
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-gray-500">در حال بارگذاری...</div>
-      </div>
-    );
-  }
+  const closeAll = () => setOpenMenu(null);
 
   return (
-    <div className="w-full">
+    <div className="p-4">
 
-      <div className="z-20 backdrop-blur-md border-b w-full shadow-lg">
-        <div className="px-4 py-3">
-          <div className="flex justify-between items-center mb-2">
-            <h2 className="text-lg font-bold text-purple-400">فیلترها</h2>
-            {hasActiveFilters && (
-              <button
-                onClick={clearAllFilters}
-                className="text-xs text-red-400 hover:text-red-300 transition"
-              >
-                حذف همه ✕
-              </button>
-            )}
-          </div>
+      <div className="flex flex-wrap justify-center gap-8 p-5 text-white">
 
-          <div className="flex flex-wrap justify-center gap-2 items-end">
-            {uniqueTypes.length > 0 && (
-              <div className="min-w-[85px]">
-                <label className="block text-xs text-gray-400 mb-0.5">🎬 نوع</label>
-                <select
-                  value={tempType}
-                  onChange={(e) => setTempType(e.target.value)}
-                  className="w-full px-2 py-1.5 bg-gray-800 rounded-lg text-white border border-gray-700 text-sm"
-                >
-                  <option value="">همه</option>
-                  {uniqueTypes.map(type => <option key={type} value={type}>{type}</option>)}
-                </select>
-              </div>
-            )}
+      
+        <div className="relative">
+          <button
+            onClick={() =>
+              setOpenMenu(openMenu === 'type' ? null : 'type')
+            }
+            className="border px-10 py-2 rounded text-[12px]"
+          >
+            فیلم و سریال
+          </button>
 
-            {uniqueGenres.length > 0 && (
-              <div className="min-w-[85px]">
-                <label className="block text-xs text-gray-400 mb-0.5">🎭 ژانر</label>
-                <select
-                  value={tempGenre}
-                  onChange={(e) => setTempGenre(e.target.value)}
-                  className="w-full px-2 py-1.5 bg-gray-800 rounded-lg text-white border border-gray-700 text-sm"
-                >
-                  <option value="">همه</option>
-                  {uniqueGenres.map(genre => <option key={genre} value={genre}>{genre}</option>)}
-                </select>
-              </div>
-            )}
-
-            {uniqueCountries.length > 0 && (
-              <div className="min-w-[85px]">
-                <label className="block text-xs text-gray-400 mb-0.5">🌍 کشور</label>
-                <select
-                  value={tempCountry}
-                  onChange={(e) => setTempCountry(e.target.value)}
-                  className="w-full px-2 py-1.5 bg-gray-800 rounded-lg text-white border border-gray-700 text-sm"
-                >
-                  <option value="">همه</option>
-                  {uniqueCountries.map(country => <option key={country} value={country}>{country}</option>)}
-                </select>
-              </div>
-            )}
-
-            {uniqueLanguages.length > 0 && (
-              <div className="min-w-[85px]">
-                <label className="block text-xs text-gray-400 mb-0.5">🌐 زبان</label>
-                <select
-                  value={tempLanguage}
-                  onChange={(e) => setTempLanguage(e.target.value)}
-                  className="w-full px-2 py-1.5 bg-gray-800 rounded-lg text-white border border-gray-700 text-sm"
-                >
-                  <option value="">همه</option>
-                  {uniqueLanguages.map(lang => <option key={lang} value={lang}>{lang}</option>)}
-                </select>
-              </div>
-            )}
-
-            {uniqueAges.length > 0 && (
-              <div className="min-w-[85px]">
-                <label className="block text-xs text-gray-400 mb-0.5">⚠️ سنی</label>
-                <select
-                  value={tempAge}
-                  onChange={(e) => setTempAge(e.target.value)}
-                  className="w-full px-2 py-1.5 bg-gray-800 rounded-lg text-white border border-gray-700 text-sm"
-                >
-                  <option value="">همه</option>
-                  {uniqueAges.map(age => <option key={age} value={age}>{age}</option>)}
-                </select>
-              </div>
-            )}
-
-            <div className="min-w-[95px]">
-              <label className="block text-xs text-gray-400 mb-0.5">🔄 مرتب‌سازی</label>
-              <select
-                value={tempSort}
-                onChange={(e) => setTempSort(e.target.value)}
-                className="w-full px-2 py-1.5 bg-gray-800 rounded-lg text-white border border-gray-700 text-sm"
-              >
-                <option value="latest">جدیدترین</option>
-                <option value="oldest">قدیمی‌ترین</option>
-                <option value="name_asc">الفبا (صعودی)</option>
-                <option value="name_desc">الفبا (نزولی)</option>
-              </select>
+          {openMenu === 'type' && (
+            <div className="absolute top-full mt-1 bg-black border rounded z-10">
+              <Link href="/category/movie" onClick={closeAll} className="block px-13 py-2 hover:bg-gray-800">
+                فیلم
+              </Link>
+              <Link href="/category/series" onClick={closeAll} className="block px-13 py-2 hover:bg-gray-800">
+                سریال
+              </Link>
             </div>
-
-            <div>
-              <button 
-                onClick={applyFilters}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-4 py-1.5 rounded-lg text-white font-bold transition shadow-lg mt-4 text-sm"
-              >
-                🔍 اعمال
-              </button>
-            </div>
-          </div>
+          )}
         </div>
+
+        
+        <div className="relative">
+          <button
+            onClick={() =>
+              setOpenMenu(openMenu === 'lang' ? null : 'lang')
+            }
+            className="border px-10 py-2 rounded text-[12px]"
+          >
+            زبان
+          </button>
+
+          {openMenu === 'lang' && (
+            <div className="absolute top-full mt-1 bg-black border rounded z-10 min-w-[180px]">
+
+         <Link href="/category/movie?lang=farsi"  onClick={closeAll} className="block px-4 py-2 hover:bg-gray-800">
+           فارسی (دوبله)
+          </Link>
+
+         <Link href="/category/movie?lang=subtitle" onClick={closeAll} className="block px-4 py-2 hover:bg-gray-800">
+         زیرنویس فارسی
+         </Link>
+
+         <Link href="/category/movie?lang=english" onClick={closeAll} className="block px-4 py-2 hover:bg-gray-800">
+           زیرنویس انگلیسی
+          </Link>
+
+         <Link href="/category/movie?lang=original" onClick={closeAll} className="block px-4 py-2 hover:bg-gray-800">
+          زبان اصلی 
+           </Link>
+
+         <Link href="/category/movie?lang=multi" onClick={closeAll} className="block px-4 py-2 hover:bg-gray-800">
+         چند زبانه
+          </Link>
+
+            </div>
+          )}
+        </div>
+
+        
+        <div className="relative">
+          <button
+            onClick={() =>
+              setOpenMenu(openMenu === 'age' ? null : 'age')
+            }
+            className="border px-10 py-2 rounded text-[12px]"
+          >
+            رده سنی
+          </button>
+
+          {openMenu === 'age' && (
+            <div className="absolute top-full mt-1 bg-black border rounded z-10">
+
+              <Link href="/category/movie?age=13" onClick={closeAll} className="block px-12 py-2 hover:bg-gray-800">
+                +13
+              </Link>
+
+              <Link href="/category/movie?age=15" onClick={closeAll} className="block px-12 py-2 hover:bg-gray-800">
+                +15
+              </Link>
+
+              <Link href="/category/movie?age=18" onClick={closeAll} className="block px-12 py-2 hover:bg-gray-800">
+                +18
+              </Link>
+
+            </div>
+          )}
+        </div>
+
+       
+        <div className="relative">
+          <button
+            onClick={() =>
+              setOpenMenu(openMenu === 'country' ? null : 'country')
+            }
+            className="border px-10 py-2 rounded text-[12px]"
+          >
+            کشور
+          </button>
+
+          {openMenu === 'country' && (
+            <div className="absolute top-full mt-1 bg-black border rounded z-10">
+
+              <Link href="/category/movie?country=iran" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                ایران
+              </Link>
+
+              <Link href="/category/movie?country=usa" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                آمریکا
+              </Link>
+
+              <Link href="/category/movie?country=uk" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                انگلستان
+              </Link>
+
+              <Link href="/category/movie?country=india" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                هند
+              </Link>
+
+            </div>
+          )}
+        </div>
+
+        <div className="relative">
+          <button
+            onClick={() =>
+              setOpenMenu(openMenu === 'genre' ? null : 'genre')
+            }
+            className="border px-10 py-2 rounded text-[12px]"
+          >
+            ژانر
+          </button>
+
+          {openMenu === 'genre' && (
+            <div className="absolute top-full mt-1 bg-black border rounded z-10">
+
+              <Link href="/category/movie?genre=action" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                اکشن
+              </Link>
+
+              <Link href="/category/movie?genre=drama" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                درام
+              </Link>
+
+              <Link href="/category/movie?genre=horror" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                ترسناک
+              </Link>
+
+              <Link href="/category/movie?genre=comedy" onClick={closeAll} className="block px-6 py-2 hover:bg-gray-800">
+                کمدی
+              </Link>
+
+            </div>
+          )}
+        </div>
+
       </div>
 
-  
-      <div id="results" className="w-full mt-4">
-        <HomePage movies={filteredAndSortedProducts} />
+      <div className="mt-10">
+        <HomePage />
       </div>
-     
+
     </div>
   );
 }
