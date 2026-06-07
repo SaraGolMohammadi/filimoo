@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl" className={amiri.variable}>
       <body className="min-h-full flex flex-col bg-gray-950 text-white">
      
-        <Header /> 
+        {/* <Header />  */}
         
    
         <main className="flex-grow">
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         </main>
         
        
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   )

@@ -8,7 +8,10 @@ import Image from 'next/image';
 export default function Category() {
   const { category } = useParams();
   const searchParams = useSearchParams();
-
+const lang = searchParams.get('lang');
+const age = searchParams.get('age');
+const country = searchParams.get('country');
+const genre = searchParams.get('genre');
   
 
   const [products, setProducts] = useState([]);
@@ -27,12 +30,29 @@ export default function Category() {
       });
   }, []);
 
-
 const filteredData = products.filter((item) => {
   const matchCategory =
     !category || item.category === category;
 
-  return matchCategory ;
+  const matchLang =
+    !lang || item.filmLanguage === lang;
+
+  const matchAge =
+    !age || item.age === age;
+
+  const matchCountry =
+    !country || item.country === country;
+
+  const matchGenre =
+    !genre || item.genre === genre;
+
+  return (
+    matchCategory &&
+    matchLang &&
+    matchAge &&
+    matchCountry &&
+    matchGenre
+  );
 });
   if (loading) {
     return <div className="p-10 text-center">در حال بارگذاری...</div>;
@@ -48,34 +68,22 @@ const filteredData = products.filter((item) => {
       {filteredData.length === 0 ? (
         <p className="text-gray-500">چیزی پیدا نشد 😐</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-5 md:grid-cols-2 lg:grid-cols-6 gap-6 ">
 
           {filteredData.map((item) => (
-            <div
-              key={item.id}
-              className="border rounded-lg overflow-hidden shadow"
-            >
+        <div key={item.id} className=" rounded-lg shadow p-4 flex flex-col items-center text-center">
+          <div className="flex justify-center items-center">
 
-              <div className="relative w-full h-60">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="p-4">
-                <h2 className="font-bold text-lg">
-                  {item.title}
-                </h2>
-
-                <p className="text-sm text-gray-600 mt-1">
-                  زبان: {item.filmLanguage}
-                </p>
-              </div>
-
+            <Image
+             src={item.image}
+             alt={item.title}
+             width={180}
+            height={250}
+            className="rounded-lg object-cover"
+            />
             </div>
+
+         </div>
           ))}
 
         </div>
