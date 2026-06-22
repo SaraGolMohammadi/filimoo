@@ -62,7 +62,10 @@ const handleLogin = () => {
             />
 
             <button onClick={handleLogin} type="button" className="w-full h-12 bg-green-500 text-black rounded-md font-bold hover:bg-green-600 transition">
-              ادامه
+              ادامه <Link
+               href="/verify"
+               className="inline-block text-gray-400 text-sm mb-4"
+             ></Link>
             </button>
               {error && <p>{error}</p>}
             <span className="text-center text-gray-400">یا</span>
