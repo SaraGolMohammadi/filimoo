@@ -167,7 +167,7 @@ export default function Header() {
             </Link>
             
            
-            <Link href="/subscribe">
+            <Link href="/shopping">
               <button className="px-3 py-1.5 rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors text-xs whitespace-nowrap md:px-5">
                 خرید
               </button>
