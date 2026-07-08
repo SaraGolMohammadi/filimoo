@@ -1,24 +1,23 @@
 'use client';
-
 import React, { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Category() {
-  const { category } = useParams();
-  const searchParams = useSearchParams();
+const { category } = useParams();
+const searchParams = useSearchParams();
 const lang = searchParams.get('lang');
 const age = searchParams.get('age');
 const country = searchParams.get('country');
 const genre = searchParams.get('genre');
   
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+const [products, setProducts] = useState([]);
+const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/filiter.json')
+    fetch('/data/category.json')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

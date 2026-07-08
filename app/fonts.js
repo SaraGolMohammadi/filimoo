@@ -1,4 +1,4 @@
-// app/fonts.js
+
 import { Amiri } from 'next/font/google';
 
 export const amiri = Amiri({

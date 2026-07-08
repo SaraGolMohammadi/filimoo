@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import HomePage from '../HomePage/page';
+import HomePage from '../genres/page';
 
 export default function Filter() {
   const [openMenu, setOpenMenu] = useState(null);
@@ -13,8 +13,6 @@ export default function Filter() {
     <div className="p-4">
 
       <div className="flex flex-wrap justify-center gap-8 p-5 text-white">
-
-      
         <div className="relative">
           <button
             onClick={() =>

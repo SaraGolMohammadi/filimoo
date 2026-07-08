@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -15,7 +14,7 @@ export default function ProductSlider() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/data.json')
+    fetch('/data/banner.json')
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -55,7 +54,7 @@ export default function ProductSlider() {
                 fill
                 quality={100}        
                 priority={product.id === 1}
-                sizes="100vw"
+                sizes="100vw w-full"
                 className="object-cover " 
               />
             </div>

@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "title": "کمدی پلاس",
+    "type": "comedy",
+    "movies": [
+      { "id": 1, "image": "/img/14826505-7ce4-4bc0-8da2-3c5bc00461e9.webp", "title": "آموزش رانندگی", "year": "2026", "rating": "5.5" },
+      { "id": 2, "image": "/img/b58a8764-15e7-4a8e-bb78-51a0affdbc8e.webp", "title": "مرد در برابر با بچه", "year": "2025", "rating": "6.5" },
+      { "id": 3, "image": "/img/59e1757b-c1eb-4077-81ba-007edb6dd42c.webp", "title": "سگ پیر", "year": "2025", "rating": "4.5" },
+      { "id": 4, "image": "/img/c2b5614d-f9d4-49cd-bbd8-75c1158d4f23.webp", "title": "تاکسیدو", "year": "2002", "rating": "5.5" },
+      { "id": 5, "image": "/img/c1daebf2-ac40-4629-9560-fc6ee1ab9b8e.webp", "title": "چادپاورز", "year": "2025", "rating": "5.5" },
+      { "id": 6, "image": "/img/2e4f76f2-7401-4e2c-ac94-b5e025c6bacf.webp", "title": "جمعه عجیب‌تر", "year": "2025", "rating": "5.5" },
+      { "id": 7, "image": "/img/78e43a40-b139-4c28-b551-080b14f89e41.webp", "title": "داستان تند و خنده‌دارما", "year": "2022", "rating": "5.5" },
+      { "id": 8, "image": "/img/7e583dee-a870-4dff-9825-8f90df310350.webp", "title": "اشتیاق کامل", "year": "2025", "rating": "5.5" },
+      { "id": 9, "image": "/img/6b7418a2-fcf4-4f97-85b0-9b3209a80ab9.webp", "title": "نقاشی", "year": "2025", "rating": "5.5" },
+      { "id": 10, "image": "/img/23c3f47e-a1b4-46db-ad16-e52b490c6035.webp", "title": "گارفیلد", "year": "2008", "rating": "5.5" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "اکشن پلاس",
+    "type": "action",
+    "movies": [
+      { "id": 1, "image": "/img/7015fdb6-29db-4556-910b-001f0395c4eb.webp", "title": "رجا شیوا جی", "year": "2026", "rating": "7.0" },
+      { "id": 2, "image": "/img/28e1b04e-7b6f-46b8-acf5-356a5b20b809.webp", "title": "نرمال", "year": "2023", "rating": "6.8" },
+      { "id": 3, "image": "/img/7bec2987-f0c2-45a5-b78a-f3038d1fd5fd.webp", "title": "شکار روباه", "year": "2025", "rating": "7.2" },
+      { "id": 4, "image": "/img/acabf714-3bb1-4386-9067-919813b82a35.webp", "title": "سیتادل", "year": "2023", "rating": "7.2" },
+      { "id": 5, "image": "/img/2ca1e2c8-fcb5-4f20-81a2-68af69c20bbd.webp", "title": "حمله خشمگین", "year": "2026", "rating": "7.2" },
+      { "id": 6, "image": "/img/7b1b7fc6-6743-4f93-b286-60cf94a46988.webp", "title": "نبرد بی‌رحمانه", "year": "2025", "rating": "7.2" },
+      { "id": 7, "image": "/img/dacf364d-5bc3-4125-ac2c-c271df42d8fb.webp", "title": "ماشین جنگی", "year": "2025", "rating": "7.2" },
+      { "id": 8, "image": "/img/7fa8a31c-9de9-4a23-8985-0e8fc92dd890.webp", "title": "مبارزه شر 2", "year": "2025", "rating": "7.2" },
+      { "id": 9, "image": "/img/eaa0a244-b81a-4406-a713-d91abdd18f72.webp", "title": "نبرد وینتر", "year": "2025", "rating": "7.2" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "درام پلاس",
+    "type": "drama",
+    "movies": [
+      { "id": 1, "image": "/img/89bc2130-501d-41a9-993e-b53c696aae0a.webp", "title": "تاکسی", "year": "2021", "rating": "8.0" },
+      { "id": 2, "image": "/img/452fbe0b-ce8d-4531-b2de-ac3fc8b04ba6.webp", "title": "دکتر یوهان", "year": "2020", "rating": "7.5" },
+      { "id": 3, "image": "/img/61d98b50-e068-46d1-aaf3-9dbbf341407f.webp", "title": "خاطرات وایولت", "year": "2020", "rating": "7.5" },
+      { "id": 4, "image": "/img/bea3ca93-bdee-4401-b5e6-25495369193a.webp", "title": "دیدن", "year": "2020", "rating": "7.5" },
+      { "id": 5, "image": "/img/65f20b04-e50c-4931-9375-9c8430059d57.webp", "title": "تازه وارد", "year": "2020", "rating": "7.5" },
+      { "id": 6, "image": "/img/97f0c5d7-f8d7-4209-9ac3-3be067e45d8c.webp", "title": "اسب‌های آرام", "year": "2020", "rating": "7.5" },
+      { "id": 7, "image": "/img/deefb399-4592-4e4b-836c-56c87ca57926.webp", "title": "در جستجوی آلاسکا", "year": "2020", "rating": "7.5" },
+      { "id": 8, "image": "/img/2db560f4-ac75-4f8c-9a4e-5769a6cf8f66.webp", "title": "عطیه", "year": "2020", "rating": "7.5" },
+      { "id": 9, "image": "/img/0eae5676-a91a-4d99-9367-9e6245627352.webp", "title": "زوج محقق", "year": "2020", "rating": "7.5" },
+      { "id": 10, "image": "/img/5c19137e-7272-4ed9-970b-a889986ff646.webp", "title": "پیرمرد", "year": "2020", "rating": "7.5" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "ترسناک پلاس",
+    "type": "horror",
+    "movies": [
+      { "id": 1, "image": "/img/64efd78e-a3bc-4944-9229-c4c3e245abcb.webp", "title": "جیغ 6", "year": "2023", "rating": "6.0" },
+      { "id": 2, "image": "/img/d9e2f6aa-0ffc-44fa-b7ee-392d4956a678.webp", "title": "طنین پنهان", "year": "2022", "rating": "5.8" },
+      { "id": 3, "image": "/img/a89bb77a-091c-4195-8fad-79dbdc297efb.webp", "title": "شکست دادن", "year": "2022", "rating": "5.8" },
+      { "id": 4, "image": "/img/815131c6-92c8-4a09-977b-43032d6b7363.webp", "title": "اهریمنی", "year": "2022", "rating": "5.8" },
+      { "id": 5, "image": "/img/a172bbfb-c7aa-433f-810c-54359772dace.webp", "title": "وارد نشوید", "year": "2022", "rating": "5.8" },
+       { "id": 6, "image": "/img/630c29c0-6600-42aa-9600-2f4dcf7882be.webp", "title": "تو مال منی", "year": "2024", "rating": "7.1" }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "عاشقانه پلاس",
+    "type": "romance",
+    "movies": [
+      { "id": 1, "image": "/img/630c29c0-6600-42aa-9600-2f4dcf7882be.webp", "title": "تو مال منی", "year": "2024", "rating": "7.1" },
+      { "id": 2, "image": "/img/05325b86-962d-4262-b229-6decb3538d08.webp", "title": "سرعت و عشق", "year": "2023", "rating": "6.9" },
+      { "id": 3, "image": "/img/fd8cdc1b-dfc0-413c-9979-1ae7ac6e2795.webp", "title": "اشتباه ما", "year": "2023", "rating": "6.9" },
+      { "id": 4, "image": "/img/ff15d4f2-5706-4156-b942-850a25f93f48.webp", "title": "اتاق دو نفره", "year": "2023", "rating": "6.9" },
+      { "id": 5, "image": "/img/0d48769d-736a-4021-bd3f-74246ab3ff7e.webp", "title": "داستان یک شب", "year": "2023", "rating": "6.9" },
+      { "id": 6, "image": "/img/7f3879c0-6865-4cc3-8c42-63e9da146ab8.webp", "title": "بدون سود بدون عشق", "year": "2023", "rating": "6.9" }
+    ]
+  }
+]
