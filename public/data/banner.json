@@ -1,29 +1,28 @@
 [
   {
-        "id": 1,
-       "image": "/img/2nsy4_desktop_1_v1.jpeg",
-        "title": "1"
-     },
-      {
-        "id": 2,
-         "image": "/img/fwv8y_desktop_1_v1.jpeg",
-         "title": "2"
-        },
-         
-      {
-        "id": 3,
-         "image": "/img/kmgp4_desktop_1_v1.webp",
-         "title": "3"
-        },
-      {
-        "id": 4,
-       "image": "/img/173459_desktop_1_v1.webp",
-       "title": "4"
-      },
-      {
-        "id": 5,
-       "image": "/img/fm0pg_desktop_1_v1.webp" ,
-       "title": "5"  
-      }
-    ]
-  
+    "id": 1,
+    "image": "/img/2nsy4_desktop_1_v1.jpeg",
+    "title": "1"
+  },
+  {
+    "id": 2,
+    "image": "/img/fwv8y_desktop_1_v1.jpeg",
+    "title": "2"
+  },
+
+  {
+    "id": 3,
+    "image": "/img/kmgp4_desktop_1_v1.webp",
+    "title": "3"
+  },
+  {
+    "id": 4,
+    "image": "/img/173459_desktop_1_v1.webp",
+    "title": "4"
+  },
+  {
+    "id": 5,
+    "image": "/img/fm0pg_desktop_1_v1.webp",
+    "title": "5"
+  }
+]

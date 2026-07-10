@@ -1,27 +1,152 @@
 [
-  { "image": "/img/mov_30717_311088.jpg", "title": "تیغ وترمه", "rating": "5.5", "time": "58" },
-  { "image": "/img/mov_172946_330406.jpg", "title": "jumbo", "rating": "4.5", "time": "48" },
-  { "image": "/img/fwv8y_desktop_1_v1.jpeg", "title": "تو را خواهند کشت", "rating": "5.5", "time": "48" },
-  { "image": "/img/2nsy4_desktop_1_v1.jpeg", "title": "گوزن های اتوبان", "rating": "6.5", "time": "58" },
-  { "image": "/img/mov_175151_343277.jpg", "title": "پنجره ای رو به جام", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174980_343279.jpg", "title": "شام ایرانی", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174723_342818.jpg", "title": "منشور", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174579_342193.jpg", "title": "تاج", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174672_342669.jpg", "title": "chickenhare", "rating": "5.5", "time": "48" },
-  { "image": "/img/fm0pg_desktop_1_v1.webp", "title": "جهنده ها", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_118009_37676-b.jpg", "title": "خرگوش", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174724_343281.jpg", "title": "بدنام", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174719_343063.jpg", "title": "جابه جا شدن", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_175106_343284.jpg", "title": "بدو کادو", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174946_342794.jpg", "title": "BRIGHT", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_119739_40176-b.jpg", "title": "پنجره ای رو به جام", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_175072_343024.jpg", "title": "شام ایرانی", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174975_343113.jpg", "title": "منشور", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174878_342526.jpg", "title": "تاج", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174946_342791.jpg", "title": "chickenhare", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_140972_68332.jpg", "title": "جهنده ها", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174005_343341.jpg", "title": "خرگوش", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174827_343096.jpg", "title": "بدنام", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_174960_342813.jpg", "title": "جابه جا شدن", "rating": "5.5", "time": "48" },
-  { "image": "/img/mov_175145_343269.jpg", "title": "بدو کادو", "rating": "5.5", "time": "48" }
+  {
+    "image": "/img/mov_30717_311088.jpg",
+    "title": "تیغ وترمه",
+    "rating": "5.5",
+    "time": "58"
+  },
+  {
+    "image": "/img/mov_172946_330406.jpg",
+    "title": "jumbo",
+    "rating": "4.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/fwv8y_desktop_1_v1.jpeg",
+    "title": "تو را خواهند کشت",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/2nsy4_desktop_1_v1.jpeg",
+    "title": "گوزن های اتوبان",
+    "rating": "6.5",
+    "time": "58"
+  },
+  {
+    "image": "/img/mov_175151_343277.jpg",
+    "title": "پنجره ای رو به جام",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174980_343279.jpg",
+    "title": "شام ایرانی",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174723_342818.jpg",
+    "title": "منشور",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174579_342193.jpg",
+    "title": "تاج",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174672_342669.jpg",
+    "title": "chickenhare",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/fm0pg_desktop_1_v1.webp",
+    "title": "جهنده ها",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_118009_37676-b.jpg",
+    "title": "خرگوش",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174724_343281.jpg",
+    "title": "بدنام",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174719_343063.jpg",
+    "title": "جابه جا شدن",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_175106_343284.jpg",
+    "title": "بدو کادو",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174946_342794.jpg",
+    "title": "BRIGHT",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_119739_40176-b.jpg",
+    "title": "پنجره ای رو به جام",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_175072_343024.jpg",
+    "title": "شام ایرانی",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174975_343113.jpg",
+    "title": "منشور",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174878_342526.jpg",
+    "title": "تاج",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174946_342791.jpg",
+    "title": "chickenhare",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_140972_68332.jpg",
+    "title": "جهنده ها",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174005_343341.jpg",
+    "title": "خرگوش",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174827_343096.jpg",
+    "title": "بدنام",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_174960_342813.jpg",
+    "title": "جابه جا شدن",
+    "rating": "5.5",
+    "time": "48"
+  },
+  {
+    "image": "/img/mov_175145_343269.jpg",
+    "title": "بدو کادو",
+    "rating": "5.5",
+    "time": "48"
+  }
 ]
