@@ -68,3 +68,22 @@ export async function POST(request) {
     );
   }
 }
+
+export async function GET() {
+  try {
+    const filePath = path.join(process.cwd(), "public", "data", "genres.json");
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const genresData = JSON.parse(fileContent);
+
+    const allGenres = genresData.map((item) => item.movies).flat();
+
+    return NextResponse.json(allGenres, { status: 200 });
+
+  } catch (error) {
+    console.error("API Error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
+}
