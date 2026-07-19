@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# پروژه شبیه‌سازی فیلیمو (Filimo Clone) 🎬
 
-## Getting Started
+این پروژه یک نمونه پیاده‌سازی مدرن و واکنش‌گرا (Responsive) از بخش فرانت‌اند پلتفرم فیلیمو است. تمرکز اصلی در این پروژه روی ارائه یک تجربه کاربری روان برای مرور فیلم‌ها و سریال‌ها، استفاده از قابلیت‌های رندرینگ Next.js و مدیریت بهینه داده‌ها بوده است.
 
-First, run the development server:
+## 🚀 قابلیت‌های کلیدی
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **نمایش پویای اطلاعات:** دریافت و نمایش لحظه‌ای اطلاعات فیلم‌ها از طریق اتصال به API خارجی.
+- **رابط کاربری مدرن:** طراحی کاملاً واکنش‌گرا و بهینه‌سازی شده برای تمامی صفحه‌نمایش‌ها (موبایل، تبلت و دسکتاپ).
+- **سیستم کد تخفیف:** شبیه‌سازی بخش اعمال کپن و بررسی اعتبار کد تخفیف در سمت فرانت‌اند.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔑 اطلاعات تست و ورود (Credentials)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+برای بررسی و تست بخش‌های مختلف پلتفرم، می‌توانید از اطلاعات پیش‌فرض زیر استفاده کنید:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **ثبت‌نام و ورود:**
+  - **شماره موبایل:** هر شماره دلخواه (مثلاً `*********09`)
+  - **کد تایید (OTP):** `123456`
 
-## Learn More
+- **کد تخفیف فعال:**
+  - **کد:** `filimo-is-Number1`
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ تکنولوژی‌های به‌کار رفته
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **فریم‌ورک:** Next.js
+- **استایل‌دهی:** Tailwind CSS
+- **دریافت داده‌ها:** Native Fetch API
+- **مدیریت نسخه:** Git & GitHub
+.
