@@ -75,9 +75,9 @@ export async function GET() {
     const fileContent = fs.readFileSync(filePath, "utf-8");
     const genresData = JSON.parse(fileContent);
 
-    const allGenres = genresData.map((item) => item.movies).flat();
+    // const allGenres = genresData.map((item) => item.movies).flat();
 
-    return NextResponse.json(allGenres, { status: 200 });
+    return NextResponse.json(genresData, { status: 200 });
 
   } catch (error) {
     console.error("API Error:", error);
