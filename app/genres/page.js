@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import MovieSlider from "../components/MovieSlider";
 import Footer from "../components/Footer";
@@ -7,7 +8,8 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/genres.json")
+    fetch("http://localhost:3000/api/filter-movie", 
+    { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
         setSections(data);
@@ -19,13 +21,13 @@ export default function HomePage() {
       });
   }, []);
 
-  if (loading) return <div className="text-center py-20">در حال بارگذاری...</div>;
+  if (loading) return <div className="text-center py-20 text-white">در حال بارگذاری...</div>;
 
   return (
-    <main className="min-h-screen text-white">
+    <main className="min-h-screen text-white p-6">
       {sections.map((section) => (
         <div key={section.id} className="mb-10">
-          <div className="flex justify-between items-center mb-2">
+          <div className="flex justify-between items-center mb-4">
             <p className="text-lg font-bold">{section.title}</p>
             <a href={`/category/${section.type}`} className="text-amber-400 text-sm hover:text-gray-300">
               مشاهده همه

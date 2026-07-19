@@ -4,10 +4,45 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-
 export default function Page() {
   const [open, setOpen] = useState(false);
   const [openSupport, setOpenSupport] = useState(false);
+  const [discountCode, setDiscountCode] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [apiMessage, setApiMessage] = useState(null);
+
+ 
+  const handleApplyDiscount = async () => {
+    if (!discountCode.trim()) {
+      setApiMessage({ text: 'لطفاً ابتدا کد تخفیف را وارد کنید', isError: true });
+      return;
+    }
+
+    setLoading(true);
+    setApiMessage(null);
+
+    try {
+      const response = await fetch('/api/discount-code', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ code: discountCode }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setApiMessage({ text: data.message, isError: false });
+      } else {
+        setApiMessage({ text: data.error || 'کد تخفیف نامعتبر است', isError: true });
+      }
+    } catch (error) {
+      setApiMessage({ text: 'خطا در برقراری ارتباط با سرور', isError: true });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="px-4">
@@ -84,13 +119,31 @@ export default function Page() {
         </button>
 
         {open && (
-          <div className='w-full max-w-xl mt-2 flex flex-col sm:flex-row gap-2'>
-            <input 
-              type="text" 
-              placeholder="کد تخفیف خود را وارد کنید..."
-              className='border p-2 w-full text-right rounded-lg'
-            />
-            <button className='bg-green-600 p-2 rounded-lg text-[12px] sm:w-auto'>تایید کد</button>
+          <div className='w-full max-w-xl mt-2 flex flex-col gap-2'>
+            <div className='flex flex-col sm:flex-row gap-2'>
+              <input 
+                type="text" 
+                value={discountCode}
+                onChange={(e) => setDiscountCode(e.target.value)}
+                placeholder="کد تخفیف خود را وارد کنید..."
+                className='border p-2 w-full text-right rounded-lg bg-zinc-900 text-white'
+                disabled={loading}
+              />
+              <button 
+                onClick={handleApplyDiscount}
+                disabled={loading}
+                className='bg-green-600 p-2 rounded-lg text-[12px] sm:w-auto disabled:bg-zinc-600 text-white min-w-[80px]'
+              >
+                {loading ? 'در حال بررسی...' : 'تایید کد'}
+              </button>
+            </div>
+            
+          
+            {apiMessage && (
+              <p className={`text-right text-xs mt-1 ${apiMessage.isError ? 'text-red-400' : 'text-emerald-400'}`}>
+                {apiMessage.text}
+              </p>
+            )}
           </div>
         )}
       </div>
@@ -102,7 +155,7 @@ export default function Page() {
       <div className='flex flex-col justify-center items-center mb-8 mt-5'>
         <button onClick={() => setOpenSupport(!openSupport)} className='border p-3 flex flex-row justify-center items-center gap-2 hover:bg-zinc-700 px-8 rounded-lg text-zinc-400'>
           پشتیبانی
-           <ChevronDown className={`mt-2 transition-transform ${open ? 'rotate-180' : ''}`} />
+           <ChevronDown className={`mt-2 transition-transform ${openSupport ? 'rotate-180' : ''}`} />
         </button>
 
         {openSupport && (

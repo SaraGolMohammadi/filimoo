@@ -6,22 +6,23 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
-  const[mobile,setmobile]=useState("");
-  const[error,setError]=useState("");
+  const [mobile, setMobile] = useState("");
+  const [error, setError] = useState("");
   const router = useRouter();
 
-const handleLogin = () => {
-  if (mobile === "") {
-    setError("لطفاً شماره موبایل را وارد کنید");
-  } else if (mobile.length !== 11) {
-    setError("شماره موبایل باید 11 رقم باشد");
-  } else if (!mobile.startsWith("09")) {
-    setError("شماره موبایل معتبر نیست");
-  } else {
-    setError("");
-    router.push("/verify-code");
-  }
-};
+  const handleLogin = () => {
+    if (mobile === "") {
+      setError("لطفاً شماره موبایل را وارد کنید");
+    } else if (mobile.length !== 11) {
+      setError("شماره موبایل باید 11 رقم باشد");
+    } else if (!mobile.startsWith("09")) {
+      setError("شماره موبایل معتبر نیست");
+    } else {
+      setError("");
+      router.push("/verify-code"); 
+      
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-4">
@@ -48,7 +49,7 @@ const handleLogin = () => {
         </Link>
 
         <div className="border border-gray-700 rounded-lg p-8">
-          <h1 className="text-center mb-6">
+          <h1 className="text-center mb-6 text-sm text-gray-300">
             برای ورود یا ثبت‌نام، اطلاعات کاربری خود را وارد کنید:
           </h1>
 
@@ -56,19 +57,22 @@ const handleLogin = () => {
             <input
               type="text"
               value={mobile}
-              onChange={((e)=>setmobile(e.target.value))}
+              onChange={(e) => setMobile(e.target.value)}
               placeholder="موبایل خود را وارد کنید"
-              className="w-full h-12 rounded-md bg-gray-900 border border-gray-700 px-4 text-right outline-none"
+              className="w-full h-12 rounded-md bg-gray-900 border border-gray-700 px-4 text-right outline-none focus:border-green-500"
             />
 
-            <button onClick={handleLogin} type="button" className="w-full h-12 bg-green-500 text-black rounded-md font-bold hover:bg-green-600 transition">
-              ادامه <Link
-               href="/verify"
-               className="inline-block text-gray-400 text-sm mb-4"
-             ></Link>
+            {error && <p className="text-red-500 text-sm text-right mt-1">{error}</p>}
+
+            <button 
+              onClick={handleLogin} 
+              type="button" 
+              className="w-full h-12 bg-green-500 text-black rounded-md font-bold hover:bg-green-600 transition"
+            >
+              ادامه
             </button>
-              {error && <p>{error}</p>}
-            <span className="text-center text-gray-400">یا</span>
+            
+            <span className="text-center text-gray-400 text-sm">یا</span>
 
             <button className="w-full h-12 border border-gray-600 rounded-md hover:bg-gray-800 transition">
               ادامه دادن با Google
